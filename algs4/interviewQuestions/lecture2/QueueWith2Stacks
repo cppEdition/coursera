@@ -1,0 +1,31 @@
+import java.util.Stack;
+public class QueueWith2Stacks<T>
+{
+    private Stack<T> stackSequentialInput = new Stack<T>();
+    private Stack<T> stackForPop = new Stack<T>();
+    public void queue(T item) {
+        stackSequentialInput.push(item);
+    }
+    public T dequeue() {
+        if (stackForPop.isEmpty()) {
+            while (!stackSequentialInput.isEmpty()) {
+               stackForPop.push(stackSequentialInput.pop());
+            }
+        }
+        return stackForPop.pop();
+    }
+  public static void main(String[]args)
+  {
+    QueueWith2Stacks<Integer> q = new QueueWith2Stacks<Integer>();
+    q.queue(4);
+    q.queue(5);
+    q.queue(6);
+    System.out.println("dequeued number == 4:"+(q.dequeue()==4));
+    System.out.println("dequeued number == 5:"+(q.dequeue()==5));
+    q.queue(7);
+    System.out.println("dequeued number == 6:"+(q.dequeue()==6));
+    
+  }
+
+}
+
