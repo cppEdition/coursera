@@ -10,3 +10,6 @@ Hint: Use two stacks, one to store all of the items and a second stack to store 
 3)Java generics. Explain why Java prohibits generic array creation.
 Hint: to start, you need to understand that Java arrays are covariant but Java generics are not:
 that is, String[] is a subtype of Object[], but Stack<String> is not a subtype of Stack<Object>.
+
+
+MyQuestion: "unchecked call to compareTo(T) as a member of the raw type java.lang.Comparable"
